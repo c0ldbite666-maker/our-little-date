@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0708">
+  <title>OUR LITTLE DATE ♡</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><span class="brand-mark">♡</span><span>OUR LITTLE DATE</span><span class="top-note">a tiny plan for us</span></header>
+    <section class="hero">
+      <div class="eyebrow">A LITTLE INVITATION</div>
+      <h1>Давай выберем<br><em>день для нас?</em></h1>
+      <p class="intro">Я хочу провести с тобой время. Выбери дату и время, которые тебе подходят ♡</p>
+      <div class="flower" aria-hidden="true">✿</div>
+    </section>
+
+    <section class="panel">
+      <form id="response-form">
+        <label for="guest-name">Как тебя подписать?</label>
+        <input id="guest-name" maxlength="40" placeholder="Твоё имя или милое прозвище" required>
+        <label for="date">Какой день тебе удобен?</label>
+        <input id="date" type="date" required>
+        <label for="time">Во сколько встретимся?</label>
+        <input id="time" type="time" required>
+        <label for="note">Может, есть пожелания?</label>
+        <textarea id="note" rows="3" maxlength="300" placeholder="Например, куда хочешь сходить... (необязательно)"></textarea>
+        <button class="primary" type="submit">Отправить мой вариант <span>♡</span></button>
+      </form>
+      <div class="result hidden" id="result">
+        <p class="success-title">Теперь отправь ссылку обратно ♡</p>
+        <p class="small muted">Это ответ для того, кто позвал тебя на встречу. Открой свою ссылку — и там появятся дата и время.</p>
+        <input id="owner-link" readonly>
+        <button class="primary secondary" id="copy-button" type="button">Скопировать ссылку с ответом</button>
+        <button class="primary secondary hidden" id="share-button" type="button">Отправить в мессенджер</button>
+        <button class="primary secondary" id="copy-text-button" type="button">Скопировать текстом</button>
+        <div class="response-card" id="answer-preview"></div>
+      </div>
+      <p class="feedback" id="feedback" role="status"></p>
+    </section>
+    <footer>made with a little love <span>♡</span></footer>
+  </main>
+  <script src="js/fx.js"></script>
+  <script type="module" src="js/guest.js"></script>
+</body>
+</html>
