@@ -24,15 +24,15 @@ function readInvitation() {
   }
 }
 
-const invitation = readInvitation();
+// Сайт можно открыть и по обычной ссылке без предварительного создания приглашения.
+// Если в ссылке есть персональное приглашение (#i=...), используем его текст.
+const invitation = readInvitation() || {
+  t: "Давай выберем день для нас?",
+  m: "Я хочу провести с тобой время. Выбери дату и время, которые тебе подходят ♡"
+};
 
-if (!invitation) {
-  form.classList.add("hidden");
-  feedback.textContent = "Похоже, ссылка повреждена. Попроси прислать приглашение ещё раз ♡";
-} else {
-  document.querySelector(".hero h1").textContent = invitation.t;
-  document.querySelector(".intro").textContent = invitation.m || "Выбери дату и время, которые тебе подходят ♡";
-}
+document.querySelector(".hero h1").textContent = invitation.t;
+document.querySelector(".intro").textContent = invitation.m || "Выбери дату и время, которые тебе подходят ♡";
 
 let answer = null;
 
